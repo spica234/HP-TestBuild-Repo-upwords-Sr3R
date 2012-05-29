@@ -1,0 +1,1 @@
+cmd_arch/arm/mach-tegra/nvrm/io/common/built-in.o :=  arm-linux-gnueabi-ld -EL    -r -o arch/arm/mach-tegra/nvrm/io/common/built-in.o arch/arm/mach-tegra/nvrm/io/common/nvrm_i2c.o arch/arm/mach-tegra/nvrm/io/common/nvrm_gpioi2c.o arch/arm/mach-tegra/nvrm/io/common/nvrm_owr.o arch/arm/mach-tegra/nvrm/io/common/nvrm_dma.o arch/arm/mach-tegra/nvrm/io/common/nvrm_gpio.o 

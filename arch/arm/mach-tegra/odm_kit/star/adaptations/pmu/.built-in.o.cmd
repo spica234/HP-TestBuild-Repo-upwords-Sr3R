@@ -1,0 +1,1 @@
+cmd_arch/arm/mach-tegra/odm_kit/star/adaptations/pmu/built-in.o :=  arm-linux-gnueabi-ld -EL    -r -o arch/arm/mach-tegra/odm_kit/star/adaptations/pmu/built-in.o arch/arm/mach-tegra/odm_kit/star/adaptations/pmu/pmu_hal.o arch/arm/mach-tegra/odm_kit/star/adaptations/pmu/max8907/built-in.o 

@@ -1,0 +1,1 @@
+cmd_arch/arm/mach-tegra/nvodm/built-in.o :=  arm-linux-gnueabi-ld -EL    -r -o arch/arm/mach-tegra/nvodm/built-in.o arch/arm/mach-tegra/nvodm/nvodm_services.o arch/arm/mach-tegra/nvodm/nvodm_services_os.o 

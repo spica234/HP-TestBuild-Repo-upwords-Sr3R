@@ -1,0 +1,1 @@
+cmd_arch/arm/mach-tegra/odm_kit/star/adaptations/gpio_ext/built-in.o :=  arm-linux-gnueabi-ld -EL    -r -o arch/arm/mach-tegra/odm_kit/star/adaptations/gpio_ext/built-in.o arch/arm/mach-tegra/odm_kit/star/adaptations/gpio_ext/gpio_ext_hal.o arch/arm/mach-tegra/odm_kit/star/adaptations/gpio_ext/gpio_ext_null.o arch/arm/mach-tegra/odm_kit/star/adaptations/gpio_ext/gpio_pcf50626.o 

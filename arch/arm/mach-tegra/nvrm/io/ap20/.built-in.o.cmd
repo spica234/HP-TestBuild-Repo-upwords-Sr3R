@@ -1,0 +1,1 @@
+cmd_arch/arm/mach-tegra/nvrm/io/ap20/built-in.o :=  arm-linux-gnueabi-ld -EL    -r -o arch/arm/mach-tegra/nvrm/io/ap20/built-in.o arch/arm/mach-tegra/nvrm/io/ap20/ap20rm_i2c.o arch/arm/mach-tegra/nvrm/io/ap20/ap20rm_slink_hw_private.o arch/arm/mach-tegra/nvrm/io/ap20/ap20rm_owr.o 

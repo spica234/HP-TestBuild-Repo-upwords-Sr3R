@@ -1,0 +1,1 @@
+cmd_arch/arm/mach-tegra/odm_kit/star/platform/built-in.o :=  arm-linux-gnueabi-ld -EL    -r -o arch/arm/mach-tegra/odm_kit/star/platform/built-in.o arch/arm/mach-tegra/odm_kit/star/platform/touch/built-in.o 
