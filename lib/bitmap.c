@@ -298,7 +298,6 @@ int bitmap_scnprintf(char *buf, unsigned int buflen,
 	unsigned long val;
 	const char *sep = "";
 	int chunksz;
-	u32 chunkmask;
 
 	chunksz = nmaskbits & (CHUNKSZ - 1);
 	if (chunksz == 0)
@@ -306,6 +305,8 @@ int bitmap_scnprintf(char *buf, unsigned int buflen,
 
 	i = ALIGN(nmaskbits, CHUNKSZ) - CHUNKSZ;
 	for (; i >= 0; i -= CHUNKSZ) {
+		int len=0;
+		u16 chunkmask;
 		chunkmask = ((1ULL << chunksz) - 1);
 		word = i / BITS_PER_LONG;
 		bit = i % BITS_PER_LONG;
