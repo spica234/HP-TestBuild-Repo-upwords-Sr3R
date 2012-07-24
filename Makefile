@@ -221,8 +221,8 @@ CONFIG_SHELL := $(shell if [ -x "$$BASH" ]; then echo $$BASH; \
 
 HOSTCC       = gcc
 HOSTCXX      = g++
-HOSTCFLAGS   = -Wall -Wmissing-prototypes -Wstrict-prototypes -O3 -fomit-frame-pointer -fgcse-sm -floop-optimize -falign-loops -falign-labels -falign-functions -falign-jumps -DPERFORMANCE_RUN=1  -lrt
-HOSTCXXFLAGS = -O3 -fomit-frame-pointer -fgcse-sm -floop-optimize -falign-loops -falign-labels -falign-functions -falign-jumps -DPERFORMANCE_RUN=1  -lrt
+HOSTCFLAGS   = -Wall -Wmissing-prototypes -Wstrict-prototypes -O3 -mstructure-size-boundary=32 -fomit-frame-pointer -fgcse-sm -floop-optimize -falign-loops -falign-labels -falign-functions -falign-jumps -DPERFORMANCE_RUN=1  -lrt
+HOSTCXXFLAGS = -O3 -mstructure-size-boundary=32 -fomit-frame-pointer -fgcse-sm -floop-optimize -falign-loops -falign-labels -falign-functions -falign-jumps -DPERFORMANCE_RUN=1  -lrt
 
 # Decide whether to build built-in, modular, or both.
 # Normally, just do built-in.
@@ -324,10 +324,10 @@ CHECK		= sparse
 CHECKFLAGS     := -D__linux__ -Dlinux -D__STDC__ -Dunix -D__unix__ \
 		  -Wbitwise -Wno-return-void $(CF)
 MODFLAGS	= -DMODULE 
-CFLAGS_MODULE   = $(MODFLAGS) -O3 -fgcse-sm -floop-optimize -falign-loops -falign-labels -falign-functions -falign-jumps -mtune=cortex-a8 -mfpu=vfpv3-d16 -mfloat-abi=soft -DPERFORMANCE_RUN=1  -lrt
+CFLAGS_MODULE   = $(MODFLAGS) -O3 -mstructure-size-boundary=32 -fgcse-sm -floop-optimize -falign-loops -falign-labels -falign-functions -falign-jumps -mtune=cortex-a8 -mfpu=vfpv3-d16 -mfloat-abi=soft -DPERFORMANCE_RUN=1  -lrt
 AFLAGS_MODULE   = $(MODFLAGS)
 LDFLAGS_MODULE  = -T $(srctree)/scripts/module-common.lds
-CFLAGS_KERNEL	= -O3 -fgcse-sm -floop-optimize -falign-loops -falign-labels -falign-functions -falign-jumps -march=armv7-a -mtune=cortex-a8 -mfpu=vfpv3-d16 -mfloat-abi=soft -DPERFORMANCE_RUN=1  -lrt
+CFLAGS_KERNEL	= -O3 -mstructure-size-boundary=32 -fgcse-sm -floop-optimize -falign-loops -falign-labels -falign-functions -falign-jumps -march=armv7-a -mtune=cortex-a8 -mfpu=vfpv3-d16 -mfloat-abi=soft -DPERFORMANCE_RUN=1  -lrt
 AFLAGS_KERNEL	=
 CFLAGS_GCOV	= -fprofile-arcs -ftest-coverage
 
@@ -537,7 +537,7 @@ all: vmlinux
 ifdef CONFIG_CC_OPTIMIZE_FOR_SIZE
 KBUILD_CFLAGS	+= -O2
 else
-KBUILD_CFLAGS	+= -O3 -fgcse-sm -floop-optimize -falign-loops -falign-labels -falign-functions -falign-jumps -march=armv7-a -mtune=cortex-a8 -mfpu=vfpv3-d16 -mfloat-abi=soft -DPERFORMANCE_RUN=1  -lrt
+KBUILD_CFLAGS	+= -O3 -mstructure-size-boundary=32 -fgcse-sm -floop-optimize -falign-loops -falign-labels -falign-functions -falign-jumps -march=armv7-a -mtune=cortex-a8 -mfpu=vfpv3-d16 -mfloat-abi=soft -DPERFORMANCE_RUN=1  -lrt
 endif
 
 include $(srctree)/arch/$(SRCARCH)/Makefile
