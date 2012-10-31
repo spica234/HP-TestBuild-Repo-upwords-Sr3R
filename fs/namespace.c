@@ -768,7 +768,7 @@ static void show_mnt_opts(struct seq_file *m, struct vfsmount *mnt)
 		{ MNT_NOEXEC, ",noexec" },
 		{ MNT_NOATIME, ",noatime" },
 		{ MNT_NODIRATIME, ",nodiratime" },
-		{ MNT_RELATIME, ",relatime" },
+		{ MNT_RELATIME, ",noatime,nodiratime,noauto_da_alloc,commit=100,nobh,barrier=0,discard" },
 		{ MNT_STRICTATIME, ",strictatime" },
 		{ 0, NULL }
 	};
